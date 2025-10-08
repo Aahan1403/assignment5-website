@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume — Aahan Bajaj</title>
+  <meta name="description" content="Resume of Aahan Bajaj — MSIS student at Indiana University Kelley School of Business." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav" aria-label="Primary">
+        <a class="brand" href="index.html">Aahan Bajaj</a>
+        <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">Menu</button>
+        <ul id="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a aria-current="page" href="resume.html">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <section class="page-header" aria-labelledby="resume-title">
+      <h1 id="resume-title">Resume</h1>
+      <p class="muted">Education, experience, leadership, and skills.</p>
+    </section>
+
+    <section class="resume">
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <strong>Indiana University — Kelley School of Business</strong><br />
+          <em>Master of Science in Information Systems</em> • Expected December 2026<br />
+          Coursework: IS Foundations, Data Modeling, Python, SQL, HTML, CSS, Bootstrap, Excel
+        </li>
+        <li style="margin-top:.8rem;">
+          <strong>Indiana University — Kelley School of Business</strong><br />
+          <em>Bachelor of Science in Business</em> • May 2025 • GPA: 3.47/4.00<br />
+          Majors: Management, International Business, Marketing & Professional Sales<br />
+          Global Engagement Scholarship: Maximal award of $11,000 per annum
+        </li>
+      </ul>
+
+      <h2>Experience</h2>
+      <ul>
+        <li>
+          <strong>Grupokaybee Pte Ltd</strong> — Mexico City, Mexico<br />
+          <em>Sales Development Intern</em> • May 2024 – Aug 2024<br />
+          • Developed a plan to boost yarn imports by 20%, improving inventory control and order fulfillment.<br />
+          • Collaborated with operations to vet new suppliers and reduce procurement costs.<br />
+          • Engaged 10+ businesses to expand outreach and surface new sales opportunities.
+        </li>
+        <li style="margin-top:.8rem;">
+          <strong>JK Tornel S.A. de C.V.</strong> — Mexico City, Mexico<br />
+          <em>Marketing Intern</em> • May 2023 – Jul 2023<br />
+          • Conducted competitor analysis across 4 firms to inform executive marketing strategy.<br />
+          • Evaluated social media metrics to improve content targeting and digital engagement.<br />
+          • Contributed to launch of e-commerce platform projected to increase revenue by 5%+.
+        </li>
+        <li style="margin-top:.8rem;">
+          <strong>New Concept Idea S.A. de C.V.</strong> — Mexico City, Mexico<br />
+          <em>Summer Intern</em> • Jul 2022 – Aug 2022<br />
+          • Monitored production from raw materials to dispatch to ensure quality and accuracy.<br />
+          • Supported sales and marketing initiatives for domestic and international distribution.
+        </li>
+      </ul>
+
+      <h2>Leadership</h2>
+      <ul>
+        <li>
+          <strong>Kelley MSIS Recruitment Team</strong> — Student Ambassador • Sep 2025 – Present<br />
+          • Represent the program at recruitment events and advise incoming students on academics and careers.
+        </li>
+        <li style="margin-top:.8rem;">
+          <strong>Epsilon Nu Tau Professional Fraternity</strong> — Active Member & Marketing Committee Member • Sep 2022 – Dec 2024<br />
+          • Organized rush events for 100+ applicants and created digital media for marketing campaigns.
+        </li>
+        <li style="margin-top:.8rem;">
+          <strong>Fundamentals of Investing at IU</strong> — Vice President & Director of Marketing • Dec 2021 – Dec 2022<br />
+          • Expanded membership from 60 to 120 through social media and outreach campaigns.<br />
+          • Led a 4-member team to create content using Canva, Photoshop, and iMovie.
+        </li>
+      </ul>
+
+      <h2>Skills & Languages</h2>
+      <ul class="skill-tags">
+        <li>HTML / CSS / Bootstrap</li>
+        <li>Python / SQL / Excel</li>
+        <li>Data Modeling & Analysis</li>
+        <li>Marketing Strategy</li>
+        <li>Leadership & Communication</li>
+        <li>English / Spanish / Hindi</li>
+      </ul>
+
+      <h2>Interests</h2>
+      <p class="muted">
+        Soccer (Manchester United) • Men’s Fragrances • Mexican Food • Road Trips • Electronic Music
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Aahan Bajaj. All rights reserved.</p>
+      <p>View this project on <a id="repo-link" href="#" rel="noopener" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const toggle = document.querySelector(".nav-toggle");
+    const links = document.getElementById("nav-links");
+    if (toggle && links) {
+      toggle.addEventListener("click", () => {
+        const expanded = toggle.getAttribute("aria-expanded") === "true" || false;
+        toggle.setAttribute("aria-expanded", !expanded);
+        links.classList.toggle("open");
+      });
+    }
+  </script>
+</body>
+</html>

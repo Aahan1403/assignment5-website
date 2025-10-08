@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Aahan Bajaj</title>
+  <meta name="description" content="About Aahan Bajaj — MSIS student at Indiana University, Kelley School of Business." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav" aria-label="Primary">
+        <a class="brand" href="index.html">Aahan Bajaj</a>
+        <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">Menu</button>
+        <ul id="nav-links">
+          <li><a aria-current="page" href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <section class="page-header" aria-labelledby="about-title">
+      <h1 id="about-title">About Me</h1>
+      <p class="muted">A quick intro and what I’m focused on right now.</p>
+    </section>
+
+    <section class="about-grid">
+      <img src="images/Headshot.jpg" alt="Headshot of Aahan Bajaj" class="about-photo" />
+
+      <div>
+        <p>
+          Hi, I’m <strong>Aahan Bajaj</strong> — a business and technology student at Indiana University’s
+          Kelley School of Business. I’m pursuing my <strong>MS in Information Systems</strong> and previously
+          completed my <strong>BS in Business</strong> with majors in Management, International Business,
+          Marketing, and Professional Sales. I enjoy bridging strategy and systems to deliver clear, measurable outcomes.
+        </p>
+
+        <p>
+          I’ve developed a foundation in data modeling, Python, SQL, HTML/CSS, and Excel, and I’m comfortable
+          translating business goals into practical deliverables — from structured documentation to polished web assets.
+          I value clean structure, attention to detail, and communicating ideas in ways that help teams move faster.
+        </p>
+
+        <p>
+          Recently, I’ve supported sales development and digital marketing efforts in Mexico City — collaborating with
+          operations and marketing leaders, analyzing competitors and engagement metrics, and contributing to e-commerce
+          launches. Those experiences sharpened my ability to work cross-functionally and execute under real deadlines.
+        </p>
+
+        <p>
+          Outside the classroom, I’ve served as a Student Ambassador for Kelley’s MSIS program and stayed involved
+          in professional organizations that emphasize leadership, communications, and community. Personally, I enjoy
+          soccer, travel, and exploring new food spots; I’m fluent in <strong>English, Spanish, and Hindi</strong>.
+        </p>
+
+        <div class="section-accent" style="margin-top:1rem">
+          <h3 style="margin-top:0">Now & Next</h3>
+          <p class="muted" style="margin:.25rem 0 0">
+            I’m exploring roles that blend client service, systems, and data — and I’m building a portfolio
+            that shows dependable execution, professional polish, and steady growth.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Aahan Bajaj. All rights reserved.</p>
+      <p>
+        View this project on
+        <a id="repo-link" href="#" rel="noopener" target="_blank">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Small helpers: dynamic year + mobile nav -->
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.getElementById('nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true' || false;
+        toggle.setAttribute('aria-expanded', !expanded);
+        links.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>

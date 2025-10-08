@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aahan Bajaj — Home</title>
+  <meta name="description" content="Personal website of Aahan Bajaj — MSIS student at Indiana University, Kelley School of Business." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav" aria-label="Primary">
+        <a class="brand" href="index.html">Aahan Bajaj</a>
+        <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">Menu</button>
+        <ul id="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Hi, I’m <strong>Aahan Bajaj</strong>.</h1>
+      <p class="lead">
+        I’m a business and technology student at Indiana University’s Kelley School of Business,
+        currently pursuing my MS in Information Systems after completing a BS in Business
+        (Management, International Business, Marketing & Professional Sales).
+        I enjoy bridging strategy and systems to deliver clear, measurable outcomes.
+      </p>
+      <div class="cta">
+        <a class="button" href="projects.html">See Projects</a>
+        <a class="button outline" href="resume.html">View Resume</a>
+      </div>
+    </section>
+
+    <!-- Quick Highlights -->
+    <section class="section" aria-labelledby="highlights-title">
+      <h2 id="highlights-title" class="visually-hidden">Highlights</h2>
+      <div class="cards">
+        <article class="card" aria-labelledby="card1-title">
+          <h2 id="card1-title">What I Do</h2>
+          <p class="muted">
+            Translate business goals into practical technology deliverables — from data-driven
+            marketing improvements to systems-oriented workflows and documentation.
+          </p>
+        </article>
+
+        <article class="card" aria-labelledby="card2-title">
+          <h2 id="card2-title">Recent Experience</h2>
+          <p class="muted">
+            Sales and marketing internships in Mexico City (Grupokaybee, JK Tornel), focused on
+            supplier vetting, competitive analysis, digital engagement, and operational planning.
+          </p>
+        </article>
+
+        <article class="card" aria-labelledby="card3-title">
+          <h2 id="card3-title">Focus Areas</h2>
+          <p class="muted">
+            Information systems, product thinking, analytics, and clear communication.
+            Comfortable with HTML/CSS, Python, SQL basics, and building polished deliverables.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Callout / Section Accent -->
+    <section class="section">
+      <div class="section-accent" role="note">
+        <h3 style="margin-top:0">Currently</h3>
+        <p class="muted" style="margin: .25rem 0 0;">
+          Exploring roles that blend client service, systems, and data — and building a portfolio
+          that demonstrates reliable execution, clean structure, and professional polish.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Aahan Bajaj. All rights reserved.</p>
+      <p>
+        View this project on
+        <a id="repo-link" href="#" rel="noopener" target="_blank">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Small helpers: dynamic year + mobile nav -->
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.getElementById('nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true' || false;
+        toggle.setAttribute('aria-expanded', !expanded);
+        links.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Aahan Bajaj</title>
+  <meta name="description" content="Contact page for Aahan Bajaj." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav" aria-label="Primary">
+        <a class="brand" href="index.html">Aahan Bajaj</a>
+        <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">Menu</button>
+        <ul id="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a aria-current="page" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <section class="page-header" aria-labelledby="contact-title">
+      <h1 id="contact-title">Contact</h1>
+      <p class="muted">Email or connect on LinkedIn — or send a quick message below.</p>
+    </section>
+
+    <section class="contact">
+      <div class="contact-info" aria-labelledby="direct-links">
+        <h2 id="direct-links">Direct</h2>
+        <ul>
+          <li><a href="mailto:avbajaj@iu.edu">avbajaj@iu.edu</a></li>
+          <li><a href="https://www.linkedin.com/in/aahanbajaj/" target="_blank" rel="noopener">linkedin.com/in/aahanbajaj</a></li>
+          <li><a href="#" id="repo-link" target="_blank" rel="noopener">GitHub (repo link)</a></li>
+        </ul>
+      </div>
+
+      <!-- Required Form -->
+      <form id="contact-form" action="thankyou.html" method="get" novalidate aria-describedby="form-help">
+        <fieldset>
+          <legend>Quick Message</legend>
+          <p id="form-help" class="help">All fields are required. Password must be at least 8 characters.</p>
+
+          <label for="firstName">First Name</label>
+          <input id="firstName" name="firstName" type="text" required autocomplete="given-name" />
+
+          <label for="lastName">Last Name</label>
+          <input id="lastName" name="lastName" type="text" required autocomplete="family-name" />
+
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" required autocomplete="email" inputmode="email" />
+
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" minlength="8" required aria-describedby="pwdHelp" />
+          <small id="pwdHelp" class="help">Minimum 8 characters.</small>
+
+          <label for="confirmPassword">Confirm Password</label>
+          <input id="confirmPassword" name="confirmPassword" type="password" minlength="8" required />
+
+          <p id="error" class="error" aria-live="assertive" role="alert" hidden></p>
+
+          <button class="button" type="submit">Send</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Aahan Bajaj. All rights reserved.</p>
+      <p>View this project on <a id="footer-repo-link" href="#" rel="noopener" target="_blank">GitHub</a></p>
+    </div>
+  </footer>
+
+  <!-- Helpers -->
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const toggle = document.querySelector(".nav-toggle");
+    const links = document.getElementById("nav-links");
+    if (toggle && links) {
+      toggle.addEventListener("click", () => {
+        const expanded = toggle.getAttribute("aria-expanded") === "true" || false;
+        toggle.setAttribute("aria-expanded", !expanded);
+        links.classList.toggle("open");
+      });
+    }
+
+    // Simple password match validation
+    const form = document.getElementById('contact-form');
+    const pwd = document.getElementById('password');
+    const confirm = document.getElementById('confirmPassword');
+    const err = document.getElementById('error');
+
+    form.addEventListener('submit', (e) => {
+      if (pwd.value !== confirm.value) {
+        e.preventDefault();
+        err.hidden = false;
+        err.textContent = 'Passwords do not match.';
+        confirm.focus();
+      } else {
+        err.hidden = true;
+        err.textContent = '';
+      }
+    });
+  </script>
+</body>
+</html>
