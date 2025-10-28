@@ -5,22 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aahan Bajaj — Home</title>
   <meta name="description" content="Personal website of Aahan Bajaj — MSIS student at Indiana University, Kelley School of Business." />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
 </head>
 <body>
   <!-- Header / Navigation -->
   <header class="site-header">
     <div class="container">
       <nav class="site-nav" aria-label="Primary">
-        <a class="brand" href="index.html">Aahan Bajaj</a>
-        <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">Menu</button>
-        <ul id="nav-links">
-          <li><a href="about.html">About</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+  <a class="brand" href="{{ url_for('home') }}">Aahan Bajaj</a>
+  <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">Menu</button>
+  <ul id="nav-links">
+    <li><a href="{{ url_for('about') }}">About</a></li>
+    <li><a href="{{ url_for('resume') }}">Resume</a></li>
+    <li><a href="{{ url_for('projects') }}">Projects</a></li>
+    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+  </ul>
+</nav>
+
     </div>
   </header>
 
@@ -36,8 +38,8 @@
         I enjoy bridging strategy and systems to deliver clear, measurable outcomes.
       </p>
       <div class="cta">
-        <a class="button" href="projects.html">See Projects</a>
-        <a class="button outline" href="resume.html">View Resume</a>
+        <a class="button" href="{{ url_for('projects') }}">See Projects</a>
+<a class="button outline" href="{{ url_for('resume') }}">View Resume</a>
       </div>
     </section>
 
@@ -88,9 +90,9 @@
     <div class="container">
       <p>&copy; <span id="year"></span> Aahan Bajaj. All rights reserved.</p>
       <p>
-        View this project on
-        <a id="repo-link" href="#" rel="noopener" target="_blank">GitHub</a>
-      </p>
+  View this project on 
+  <a id="repo-link" href="https://github.com/Aahan1403/assignment5-website" target="_blank" rel="noopener">GitHub</a>
+</p>
     </div>
   </footer>
 

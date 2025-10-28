@@ -149,7 +149,7 @@ h3 { font-size: 1.1rem; }
   display: inline-block;
   text-decoration: none;
 }
-.button:hover { background: var(--primary-600); text-decoration: none; }
+.button:hover { background: var(--primary-600); text-decoration: none; color: #fff; }
 .button:focus { outline: 3px solid var(--primary-50); outline-offset: 2px; }
 .button.outline {
   background: transparent;

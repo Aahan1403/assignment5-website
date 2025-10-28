@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add Project — Aahan Bajaj</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav" aria-label="Primary">
+        <a class="brand" href="{{ url_for('home') }}">Aahan Bajaj</a>
+        <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">Menu</button>
+        <ul id="nav-links">
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('resume') }}">Resume</a></li>
+          <li><a href="{{ url_for('projects') }}">Projects</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h1>Add Project</h1>
+      <p class="muted">Add a new project to your portfolio. Images must be uploaded manually to static/images.</p>
+    </section>
+
+    <section>
+      <form action="{{ url_for('add_project_view') }}" method="post" class="project-form">
+        <fieldset>
+          <label for="title">Title</label>
+          <input id="title" name="title" required />
+
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="6" required></textarea>
+
+          <label for="imagefilename">Image file name (place file in static/images)</label>
+          <input id="imagefilename" name="imagefilename" placeholder="example.jpg" />
+
+          <button type="submit" class="button">Add Project</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Aahan Bajaj. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const toggle = document.querySelector(".nav-toggle");
+    const links = document.getElementById("nav-links");
+    if (toggle && links) {
+      toggle.addEventListener("click", () => {
+        const expanded = toggle.getAttribute("aria-expanded") === "true" || false;
+        toggle.setAttribute("aria-expanded", !expanded);
+        links.classList.toggle("open");
+      });
+    }
+  </script>
+</body>
+</html>

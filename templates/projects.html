@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Aahan Bajaj</title>
+  <meta name="description" content="Internship projects by Aahan Bajaj — professional experience in marketing and operations." />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav" aria-label="Primary">
+  <a class="brand" href="{{ url_for('home') }}">Aahan Bajaj</a>
+  <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false">Menu</button>
+  <ul id="nav-links">
+    <li><a href="{{ url_for('about') }}">About</a></li>
+    <li><a href="{{ url_for('resume') }}">Resume</a></li>
+    <li><a href="{{ url_for('projects') }}">Projects</a></li>
+    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+  </ul>
+</nav>
+
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <section class="page-header" aria-labelledby="projects-title">
+      <h1 id="projects-title">Projects</h1>
+      <p class="muted">
+        Internship-led initiatives demonstrating strategy alignment, analytics-driven execution,
+        and measurable operational or marketing impact.
+      </p>
+    </section>
+
+    <section class="project-list">
+      <p><a href="{{ url_for('add_project_view') }}" class="button">Add New Project</a></p>
+      {% if projects and projects|length > 0 %}
+      <table class="projects-table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in projects %}
+          <tr>
+            <td>
+              {% if p.imagefilename %}
+                <img src="{{ url_for('static', filename='images/' + p.imagefilename) }}" alt="{{ p.title }}" style="max-width:150px; height:auto;"/>
+              {% else %}
+                (no image)
+              {% endif %}
+            </td>
+            <td>{{ p.title }}</td>
+            <td>{{ p.description }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+        <p>No projects yet. Add one using the "Add New Project" button above.</p>
+      {% endif %}
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Aahan Bajaj. All rights reserved.</p>
+      <p>
+  View this project on 
+  <a id="repo-link" href="https://github.com/Aahan1403/assignment5-website" target="_blank" rel="noopener">GitHub</a>
+</p>
+    </div>
+  </footer>
+
+  <!-- Helpers -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const toggle = document.querySelector(".nav-toggle");
+    const links = document.getElementById("nav-links");
+    if (toggle && links) {
+      toggle.addEventListener("click", () => {
+        const expanded = toggle.getAttribute("aria-expanded") === "true" || false;
+        toggle.setAttribute("aria-expanded", !expanded);
+        links.classList.toggle("open");
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+
